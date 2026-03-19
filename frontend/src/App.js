@@ -81,7 +81,7 @@ export default function App() {
         <div className="header-inner">
           <span className="logo">🎬</span>
           <div>
-            <h1>YouTube SEO Crawler</h1>
+<h1>YouTube | URL Crawler</h1>
             <p>Extraé métricas de videos y Shorts a partir de un CSV de URLs</p>
           </div>
         </div>
