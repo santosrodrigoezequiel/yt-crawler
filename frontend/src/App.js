@@ -5,11 +5,10 @@ import DoneStep from './components/DoneStep';
 import './App.css';
 
 // ── Configuración ─────────────────────────────────────────────────────────────
-// En producción: reemplazar con la URL de tu Railway deployment
 const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:8000';
 
 export default function App() {
-  const [step, setStep] = useState('upload'); // upload | progress | done
+  const [step, setStep] = useState('upload');
   const [jobId, setJobId] = useState(null);
   const [jobInfo, setJobInfo] = useState({ total: 0, current: 0, porcentaje: 0, ultimo: {} });
   const [error, setError] = useState('');
@@ -21,7 +20,6 @@ export default function App() {
         const res = await fetch(`${API_BASE}/status/${id}`);
         const data = await res.json();
         setJobInfo(data);
-
         if (data.status === 'done') {
           clearInterval(pollRef.current);
           setStep('done');
@@ -40,19 +38,16 @@ export default function App() {
     setError('');
     const formData = new FormData();
     formData.append('file', file);
-
     try {
       const res = await fetch(`${API_BASE}/upload`, {
         method: 'POST',
         body: formData,
       });
       const data = await res.json();
-
       if (!res.ok) {
         setError(data.detail || 'Error al subir el archivo');
         return;
       }
-
       setJobId(data.job_id);
       setJobInfo({ total: data.total_urls, current: 0, porcentaje: 0, ultimo: {} });
       setStep('progress');
@@ -81,7 +76,7 @@ export default function App() {
         <div className="header-inner">
           <span className="logo">🎬</span>
           <div>
-<h1>YouTube | URL Crawler</h1>
+            <h1>YouTube | URL Crawler</h1>
             <p>Extraé métricas de videos y Shorts a partir de un CSV de URLs</p>
           </div>
         </div>
@@ -94,7 +89,6 @@ export default function App() {
             <button onClick={() => setError('')} className="error-close">✕</button>
           </div>
         )}
-
         {step === 'upload' && <UploadStep onUpload={handleUpload} />}
         {step === 'progress' && <ProgressStep jobInfo={jobInfo} onCancel={handleReset} />}
         {step === 'done' && (
@@ -105,12 +99,19 @@ export default function App() {
           />
         )}
       </main>
-<footer className="footer">
-  <p>
-  <a href="https://www.linkedin.com/in/santosrodrigoezequiel/" target="_blank" rel="noreferrer">
-    Rodrigo Ezequiel Santos
-  </a>
-  {" | "}LinkedIn
-</p>
-</footer>
+
+      <footer className="footer">
+        <p>
+          
+            href="https://www.linkedin.com/in/santosrodrigoezequiel/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Rodrigo Ezequiel Santos
+          </a>
+          {" · LinkedIn"}
+        </p>
+      </footer>
+    </div>
+  );
 }
