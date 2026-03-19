@@ -1,4 +1,4 @@
-# 🎬 YouTube SEO Crawler
+# 🎬 YouTube |URL Crawler
 
 Extrae métricas SEO de videos y Shorts de YouTube a partir de un CSV de URLs.
 
@@ -81,3 +81,4 @@ cd frontend
 npm install
 REACT_APP_API_URL=http://localhost:8000 npm start
 ```
+LinkedIn - https://www.linkedin.com/in/santosrodrigoezequiel/
