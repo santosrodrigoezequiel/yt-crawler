@@ -1,4 +1,4 @@
-# 🎬 YouTube |URL Crawler
+# 🎬 YouTube | URL Crawler
 
 Extrae métricas SEO de videos y Shorts de YouTube a partir de un CSV de URLs.
 
