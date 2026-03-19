@@ -108,7 +108,7 @@ export default function App() {
 
       <footer className="footer">
 <p>
-  LinkedIn | {" "}
+  Linkedin | {" "}
   <a href="https://www.linkedin.com/in/santosrodrigoezequiel/" target="_blank" rel="noreferrer">
     Rodrigo Ezequiel Santos
   </a>
