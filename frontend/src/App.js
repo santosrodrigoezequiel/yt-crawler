@@ -100,18 +100,12 @@ export default function App() {
         )}
       </main>
 
-      <footer className="footer">
-        <p>
-          
-            href="https://www.linkedin.com/in/santosrodrigoezequiel/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Rodrigo Ezequiel Santos
-          </a>
-          {" · LinkedIn"}
-        </p>
-      </footer>
+     <footer className="footer">
+  <p>
+    <a href="https://www.linkedin.com/in/santosrodrigoezequiel/" target="_blank" rel="noreferrer">Rodrigo Ezequiel Santos</a>
+    {' · LinkedIn'}
+  </p>
+</footer>
     </div>
   );
 }
