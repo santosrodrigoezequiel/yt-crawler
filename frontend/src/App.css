@@ -275,4 +275,10 @@ body {
   .info-grid { grid-template-columns: 1fr; }
   .done-cols-grid { grid-template-columns: repeat(2, 1fr); }
   .card { padding: 20px; }
+  .footer a {
+  color: #0077b5;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
 }
